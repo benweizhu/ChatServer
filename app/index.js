@@ -1,4 +1,12 @@
 const express = require("express");
+const MongoClient = require("mongodb").MongoClient;
+
+MongoClient.connect("mongodb://localhost:27017/exampleDb", function(err, db) {
+  if (!err) {
+    console.log("mongodb is connected!");
+  }
+});
+
 const app = express();
 
 app.get("/", function(req, res) {
